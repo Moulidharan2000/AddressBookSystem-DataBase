@@ -152,3 +152,19 @@ mysql> select * from addressbook where city = "vizag" or State = "AndraPraesh";
 | Preeti    | Singh    | FrazerTown | Vizag | AndraPradesh | 4000256 | 7854695236  | psft288@gmail.com |
 +-----------+----------+------------+-------+--------------+---------+-------------+-------------------+
 1 row in set (0.00 sec)
+
+mysql> select count(City) from addressbook where City = "Bangalore";
++-------------+
+| count(City) |
++-------------+
+|           2 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(State) from addressbook where State = "AndraPradesh";
++--------------+
+| count(State) |
++--------------+
+|            1 |
++--------------+
+1 row in set (0.00 sec)
