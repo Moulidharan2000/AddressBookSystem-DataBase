@@ -77,3 +77,29 @@ mysql> select * from addressbook;
 | Ram       | Kumar    | IndiraNagar | Bangalore | Karnataka | 530068 | 7894562456  | ramrk@gmail.com    |
 +-----------+----------+-------------+-----------+-----------+--------+-------------+--------------------+
 2 rows in set (0.00 sec)
+
+mysql> UPDATE addressbook set FirstName = "Jakson", LastName = "Percy" WHERE(FirstName = "Raj");
+Query OK, 1 row affected (0.10 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook;
++-----------+----------+-------------+-----------+-----------+--------+-------------+--------------------+
+| FirstName | Lastname | Address     | City      | State     | Zip    | PhoneNumber | Email
+   |
++-----------+----------+-------------+-----------+-----------+--------+-------------+--------------------+
+| Jakson    | Percy    | AnnaNagar   | Chennai   | TamilNadu | 600024 | 8563214590  | rajrj123@gmail.com |
+| Ram       | Kumar    | IndiraNagar | Bangalore | Karnataka | 530068 | 7894562456  | ramrk@gmail.com    |
++-----------+----------+-------------+-----------+-----------+--------+-------------+--------------------+
+2 rows in set (0.00 sec)mysql> UPDATE addressbook set FirstName = "Jakson", LastName = "Percy" WHERE(FirstName = "Raj");
+Query OK, 1 row affected (0.10 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook;
++-----------+----------+-------------+-----------+-----------+--------+-------------+--------------------+
+| FirstName | Lastname | Address     | City      | State     | Zip    | PhoneNumber | Email
+   |
++-----------+----------+-------------+-----------+-----------+--------+-------------+--------------------+
+| Jakson    | Percy    | AnnaNagar   | Chennai   | TamilNadu | 600024 | 8563214590  | rajrj123@gmail.com |
+| Ram       | Kumar    | IndiraNagar | Bangalore | Karnataka | 530068 | 7894562456  | ramrk@gmail.com    |
++-----------+----------+-------------+-----------+-----------+--------+-------------+--------------------+
+2 rows in set (0.00 sec)
