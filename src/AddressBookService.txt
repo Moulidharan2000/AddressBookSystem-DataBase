@@ -247,3 +247,27 @@ mysql> select * from addressbook;
 | Preeti    | Singh    | Professional | Priya   | FrazerTown  | Vizag     | AndraPradesh | 4000256 | 7854695236  | psft288@gmail.com |
 +-----------+----------+--------------+---------+-------------+-----------+--------------+---------+-------------+-------------------+
 3 rows in set (0.00 sec)
+
+mysql> select COUNT(Type) from addressbook where  Type = "Friend";
++-------------+
+| COUNT(Type) |
++-------------+
+|           1 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select COUNT(Type) from addressbook where Type = "Family";
++-------------+
+| COUNT(Type) |
++-------------+
+|           1 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select COUNT(Type) from addressbook where Type = "Professional";
++-------------+
+| COUNT(Type) |
++-------------+
+|           1 |
++-------------+
+1 row in set (0.00 sec)
