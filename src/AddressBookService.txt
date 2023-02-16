@@ -178,3 +178,72 @@ mysql> select * from addressbook WHERE(City = "Bangalore" or State = "AndraPrade
 | Ram       | Kumar    | IndiraNagar | Bangalore | Karnataka    |  530068 | 7894562456  | ramrk@gmail.com   |
 +-----------+----------+-------------+-----------+--------------+---------+-------------+-------------------+
 3 rows in set (0.00 sec)
+
+mysql> alter table addressbook add Type varchar(255) after Lastname ;
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table addressbook add Name varchar(255) after Type ;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe addressbook;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| FirstName   | varchar(150) | YES  |     | NULL    |       |
+| Lastname    | varchar(150) | YES  |     | NULL    |       |
+| Type        | varchar(255) | YES  |     | NULL    |       |
+| Name        | varchar(255) | YES  |     | NULL    |       |
+| Address     | varchar(255) | YES  |     | NULL    |       |
+| City        | varchar(255) | YES  |     | NULL    |       |
+| State       | varchar(255) | YES  |     | NULL    |       |
+| Zip         | int          | YES  |     | NULL    |       |
+| PhoneNumber | mediumtext   | YES  |     | NULL    |       |
+| Email       | varchar(255) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+10 rows in set (0.00 sec)
+
+mysql> update addressbook set Type = "Family" where Firstname = "Dani";
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbook set Type = "Friend" where Firstname = "Ram";
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbook set Type = "Professional" where Firstname = "Preeti";
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook;
++-----------+----------+--------------+------+-------------+-----------+--------------+---------+-------------+-------------------+
+| FirstName | Lastname | Type         | Name | Address     | City      | State        | Zip     | PhoneNumber | Email             |
++-----------+----------+--------------+------+-------------+-----------+--------------+---------+-------------+-------------------+
+| Ram       | Kumar    | Friend       | NULL | IndiraNagar | Bangalore | Karnataka    |  530068 | 7894562456  | ramrk@gmail.com   |
+| Dani      | Don      | Family       | NULL | RajajiNagar | Bangalore | Karnataka    |  530064 | 9875641320  | ddrj123@gmail.com |
+| Preeti    | Singh    | Professional | NULL | FrazerTown  | Vizag     | AndraPradesh | 4000256 | 7854695236  | psft288@gmail.com |
++-----------+----------+--------------+------+-------------+-----------+--------------+---------+-------------+-------------------+
+3 rows in set (0.00 sec)
+
+mysql> update addressbook set Name = "Priya" where Firstname = "Preeti";
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbook set Name = "Shankar" where Firstname = "Dani";
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbook set Name = "Bhavan" where Firstname = "Ram";
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook;
++-----------+----------+--------------+---------+-------------+-----------+--------------+---------+-------------+-------------------+
+| FirstName | Lastname | Type         | Name    | Address     | City      | State        | Zip     | PhoneNumber | Email             |
++-----------+----------+--------------+---------+-------------+-----------+--------------+---------+-------------+-------------------+
+| Ram       | Kumar    | Friend       | Bhavan  | IndiraNagar | Bangalore | Karnataka    |  530068 | 7894562456  | ramrk@gmail.com   |
+| Dani      | Don      | Family       | Shankar | RajajiNagar | Bangalore | Karnataka    |  530064 | 9875641320  | ddrj123@gmail.com |
+| Preeti    | Singh    | Professional | Priya   | FrazerTown  | Vizag     | AndraPradesh | 4000256 | 7854695236  | psft288@gmail.com |
++-----------+----------+--------------+---------+-------------+-----------+--------------+---------+-------------+-------------------+
+3 rows in set (0.00 sec)
