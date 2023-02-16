@@ -271,3 +271,44 @@ mysql> select COUNT(Type) from addressbook where Type = "Professional";
 |           1 |
 +-------------+
 1 row in set (0.00 sec)
+
+mysql> insert into addressbook (FirstName, LastName, Type, Name, Address, City, State, Zip, PhoneNumber, Email) values ("Mohamad", "Tariq", "Friend and Family", "Tariq", "Adaiyar", "Chennai", "TamilNadu", '600024',"9863251047", "mdt123@gmail.com");
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from addressbook;
++-----------+----------+-------------------+---------+-------------+-----------+--------------+---------+-------------+-------------------+
+| FirstName | Lastname | Type              | Name    | Address     | City      | State        | Zip     | PhoneNumber | Email             |
++-----------+----------+-------------------+---------+-------------+-----------+--------------+---------+-------------+-------------------+
+| Ram       | Kumar    | Friend            | Bhavan  | IndiraNagar | Bangalore | Karnataka    |  530068 | 7894562456  | ramrk@gmail.com   |
+| Dani      | Don      | Family            | Shankar | RajajiNagar | Bangalore | Karnataka    |  530064 | 9875641320  | ddrj123@gmail.com |
+| Preeti    | Singh    | Professional      | Priya   | FrazerTown  | Vizag     | AndraPradesh | 4000256 | 7854695236  | psft288@gmail.com |
+| Mohamad   | Tariq    | Friend and Family | Tariq   | Adaiyar     | Chennai   | TamilNadu    |  600024 | 9863251047  | mdt123@gmail.com  |
++-----------+----------+-------------------+---------+-------------+-----------+--------------+---------+-------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> update addressbook set Name = "RamFriend" where Firstname = "Ram";
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbook set Name = "DaniBrother" where Firstname = "Dani";
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbook set Name = "PreetiCollegue" where Firstname = "Preeti";
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbook set Name = "TariqBuddy" where Firstname = "Mohamad";
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook;
++-----------+----------+-------------------+----------------+-------------+-----------+--------------+---------+-------------+-------------------+
+| FirstName | Lastname | Type              | Name           | Address     | City      | State        | Zip     | PhoneNumber | Email             |
++-----------+----------+-------------------+----------------+-------------+-----------+--------------+---------+-------------+-------------------+
+| Ram       | Kumar    | Friend            | RamFriend      | IndiraNagar | Bangalore | Karnataka    |  530068 | 7894562456  | ramrk@gmail.com   |
+| Dani      | Don      | Family            | DaniBrother    | RajajiNagar | Bangalore | Karnataka    |  530064 | 9875641320  | ddrj123@gmail.com |
+| Preeti    | Singh    | Professional      | PreetiCollegue | FrazerTown  | Vizag     | AndraPradesh | 4000256 | 7854695236  | psft288@gmail.com |
+| Mohamad   | Tariq    | Friend and Family | TariqBuddy     | Adaiyar     | Chennai   | TamilNadu    |  600024 | 9863251047  | mdt123@gmail.com  |
++-----------+----------+-------------------+----------------+-------------+-----------+--------------+---------+-------------+-------------------+
+4 rows in set (0.00 sec)
