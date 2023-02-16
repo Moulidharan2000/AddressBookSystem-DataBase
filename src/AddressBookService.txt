@@ -168,3 +168,13 @@ mysql> select count(State) from addressbook where State = "AndraPradesh";
 |            1 |
 +--------------+
 1 row in set (0.00 sec)
+
+mysql> select * from addressbook WHERE(City = "Bangalore" or State = "AndraPradesh") ORDER BY FirstName ASC;
++-----------+----------+-------------+-----------+--------------+---------+-------------+-------------------+
+| FirstName | Lastname | Address     | City      | State        | Zip     | PhoneNumber | Email             |
++-----------+----------+-------------+-----------+--------------+---------+-------------+-------------------+
+| Dani      | Don      | RajajiNagar | Bangalore | Karnataka    |  530064 | 9875641320  | ddrj123@gmail.com |
+| Preeti    | Singh    | FrazerTown  | Vizag     | AndraPradesh | 4000256 | 7854695236  | psft288@gmail.com |
+| Ram       | Kumar    | IndiraNagar | Bangalore | Karnataka    |  530068 | 7894562456  | ramrk@gmail.com   |
++-----------+----------+-------------+-----------+--------------+---------+-------------+-------------------+
+3 rows in set (0.00 sec)
