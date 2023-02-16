@@ -103,3 +103,33 @@ mysql> select * from addressbook;
 | Ram       | Kumar    | IndiraNagar | Bangalore | Karnataka | 530068 | 7894562456  | ramrk@gmail.com    |
 +-----------+----------+-------------+-----------+-----------+--------+-------------+--------------------+
 2 rows in set (0.00 sec)
+
+mysql> insert into addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNumber, Email) values ("Dani", "Don", "RajajiNagar", "Bangalore", "Karnataka", 530064, '9875641320', "ddrj123@gmail.com");
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNumber, Email) values ("Preeti", "Singh", "FrazerTown", "Vizag", "AndraPradesh", 4000256, '7854695236', "psft288@gmail.com");
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from addressbook;
++-----------+----------+-------------+-----------+--------------+---------+-------------+--------------------+
+| FirstName | Lastname | Address     | City      | State        | Zip     | PhoneNumber | Email              |
++-----------+----------+-------------+-----------+--------------+---------+-------------+--------------------+
+| Jakson    | Percy    | AnnaNagar   | Chennai   | TamilNadu    |  600024 | 8563214590  | rajrj123@gmail.com |
+| Ram       | Kumar    | IndiraNagar | Bangalore | Karnataka    |  530068 | 7894562456  | ramrk@gmail.com    |
+| Dani      | Don      | RajajiNagar | Bangalore | Karnataka    |  530064 | 9875641320  | ddrj123@gmail.com  |
+| Preeti    | Singh    | FrazerTown  | Vizag     | AndraPradesh | 4000256 | 7854695236  | psft288@gmail.com  |
++-----------+----------+-------------+-----------+--------------+---------+-------------+--------------------+
+4 rows in set (0.00 sec)
+
+mysql> delete from addressbook where(FirstName = "Jakson");
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from addressbook;
++-----------+----------+-------------+-----------+--------------+---------+-------------+-------------------+
+| FirstName | Lastname | Address     | City      | State        | Zip     | PhoneNumber | Email             |
++-----------+----------+-------------+-----------+--------------+---------+-------------+-------------------+
+| Ram       | Kumar    | IndiraNagar | Bangalore | Karnataka    |  530068 | 7894562456  | ramrk@gmail.com   |
+| Dani      | Don      | RajajiNagar | Bangalore | Karnataka    |  530064 | 9875641320  | ddrj123@gmail.com |
+| Preeti    | Singh    | FrazerTown  | Vizag     | AndraPradesh | 4000256 | 7854695236  | psft288@gmail.com |
++-----------+----------+-------------+-----------+--------------+---------+-------------+-------------------+
+3 rows in set (0.00 sec)
