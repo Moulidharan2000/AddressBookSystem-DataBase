@@ -312,3 +312,72 @@ mysql> select * from addressbook;
 | Mohamad   | Tariq    | Friend and Family | TariqBuddy     | Adaiyar     | Chennai   | TamilNadu    |  600024 | 9863251047  | mdt123@gmail.com  |
 +-----------+----------+-------------------+----------------+-------------+-----------+--------------+---------+-------------+-------------------+
 4 rows in set (0.00 sec)
+
+mysql> select * from addressbook where city = "Bangalore" or State = "Karnataka";
++-----------+----------+-------------+-----------+-----------+--------+-------------+-------------------+
+| FirstName | Lastname | Address     | City      | State     | Zip    | PhoneNumber | Email
+  |
++-----------+----------+-------------+-----------+-----------+--------+-------------+-------------------+
+| Ram       | Kumar    | IndiraNagar | Bangalore | Karnataka | 530068 | 7894562456  | ramrk@gmail.com   |
+| Dani      | Don      | RajajiNagar | Bangalore | Karnataka | 530064 | 9875641320  | ddrj123@gmail.com |
++-----------+----------+-------------+-----------+-----------+--------+-------------+-------------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from addressbook where city = "vizag" or State = "AndraPraesh";
++-----------+----------+------------+-------+--------------+---------+-------------+-------------------+
+| FirstName | Lastname | Address    | City  | State        | Zip     | PhoneNumber | Email
+ |
++-----------+----------+------------+-------+--------------+---------+-------------+-------------------+
+| Preeti    | Singh    | FrazerTown | Vizag | AndraPradesh | 4000256 | 7854695236  | psft288@gmail.com |
++-----------+----------+------------+-------+--------------+---------+-------------+-------------------+
+1 row in set (0.00 sec)
+
+mysql> select count(City) from addressbook where City = "Bangalore";
++-------------+
+| count(City) |
++-------------+
+|           2 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(State) from addressbook where State = "AndraPradesh";
++--------------+
+| count(State) |
++--------------+
+|            1 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> select * from addressbook WHERE(City = "Bangalore" or State = "AndraPradesh") ORDER BY FirstName ASC;
++-----------+----------+-------------+-----------+--------------+---------+-------------+-------------------+
+| FirstName | Lastname | Address     | City      | State        | Zip     | PhoneNumber | Email             |
++-----------+----------+-------------+-----------+--------------+---------+-------------+-------------------+
+| Dani      | Don      | RajajiNagar | Bangalore | Karnataka    |  530064 | 9875641320  | ddrj123@gmail.com |
+| Preeti    | Singh    | FrazerTown  | Vizag     | AndraPradesh | 4000256 | 7854695236  | psft288@gmail.com |
+| Ram       | Kumar    | IndiraNagar | Bangalore | Karnataka    |  530068 | 7894562456  | ramrk@gmail.com   |
++-----------+----------+-------------+-----------+--------------+---------+-------------+-------------------+
+3 rows in set (0.00 sec)
+
+mysql> select COUNT(Type) from addressbook where  Type = "Friend";
++-------------+
+| COUNT(Type) |
++-------------+
+|           1 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select COUNT(Type) from addressbook where Type = "Family";
++-------------+
+| COUNT(Type) |
++-------------+
+|           1 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select COUNT(Type) from addressbook where Type = "Professional";
++-------------+
+| COUNT(Type) |
++-------------+
+|           1 |
++-------------+
+1 row in set (0.00 sec)
